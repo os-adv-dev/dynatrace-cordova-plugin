@@ -1,29 +1,22 @@
 {
   "author": {
-    "name": "Dynatrace"
+    "name": "Dynatrace Outsystems"
   },
   "cordova": {
-    "id": "dynatrace-cordova-plugin",
+    "id": "dynatrace-outsystems-plugin",
     "platforms": [
       "ios",
       "android"
     ]
   },
   "dependencies": {
-    "axios": "0.21.1",
-    "cordova-common": "^4.0.0",
-    "jsdom": "^15.2.1",
-    "plist": "^3.0.1",
     "q": "^1.5.1"
   },
-  "description": "This plugin gives you the ability to use the Dynatrace instrumentation in your hybrid application (Cordova, Ionic, ..). It uses the Mobile Agent, the JavaScript Agent. The Mobile Agent will give you all device specific values containing lifecycle information and the Javascript Agent will allow you to manually instrument your JavaScript/TypeScript code out of the box (Typescript definitions included). The JavaScript Agent will cover the network calls and will automatically detect them.",
+  "description": "This plugin gives you the ability to use the Dynatrace instrumentation in your Outsystems application . It uses the Mobile Agent, the JavaScript Agent. The Mobile Agent will give you all device specific values containing lifecycle information and the Javascript Agent will allow you to manually instrument your JavaScript/TypeScript code out of the box (Typescript definitions included). The JavaScript Agent will cover the network calls and will automatically detect them.",
   "files": [
-    "src/*",
     "hooks/*",
     "plugin.xml",
     "README.md",
-    "www/DynatraceCordovaPlugin.js",
-    "typings/main.d.ts",
     "package.json"
   ],
   "homepage": "https://www.dynatrace.com/",
@@ -38,6 +31,6 @@
     "Outsystems"
   ],
   "license": "Copyright (c) 2012-2020 Dynatrace LLC. All rights reserved.",
-  "name": "dynatrace-cordova-plugin",
-  "version": "1.213.0"
+  "name": "dynatrace-outsystems-plugin",
+  "version": "1.0"
 }

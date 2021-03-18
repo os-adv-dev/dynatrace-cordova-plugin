@@ -1,54 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="dynatrace-cordova-plugin" version="1.213.0">
+<?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="dynatrace-outsystems-plugin" version="1.0">
   <name>Dynatrace</name>
-  <description>Dynatrace Cordova Plugin</description>
+  <description>Dynatrace Outsystems Plugin</description>
 
-  <js-module src="www/DynatraceCordovaPlugin.js" name="dynatraceMobile">
-    <clobbers target="dynatraceMobile"/>
-  </js-module>
-
-  <hook src="hooks/pluginAdd.js" type="before_plugin_add"/>
   <hook src="hooks/Outsystems/npmInstall.js" type="before_plugin_install"/>
-  <hook src="hooks/install.js" type="after_plugin_add"/>
-  <hook src="hooks/uninstall.js" type="before_plugin_rm"/>
   <hook src="hooks/Outsystems/copyConfig.js" type="before_prepare"/>
-  <hook src="hooks/instrument.js" type="after_prepare"/>
-  <hook src="hooks/close-log.js" type="after_build"/>
-  <hook src="hooks/close-log.js" type="after_run"/>
 
-  <platform name="ios">
-    <config-file parent="/*" target="config.xml">
-      <feature name="DynatraceCordovaPlugin">
-        <param name="ios-package" value="DynatraceCordovaPlugin"/>
-      </feature>
-    </config-file>
-    
-    <header-file src="src/ios/DynatraceCordovaPlugin.h"/>
-    <source-file src="src/ios/DynatraceCordovaPlugin.m"/>
-
-    <framework src="Dynatrace/lib" spec="~> 8.181.1" type="podspec"/>
-
-    <framework src="libsqlite3.dylib"/>
-    <framework src="CoreLocation.framework"/>
-    <framework src="CoreTelephony.framework"/>
-    <framework src="CoreServices.framework"/>
-    <framework src="Security.framework"/>
-    <framework src="SystemConfiguration.framework"/>
-    <framework src="libz.dylib"/>
-    <framework src="libc++.dylib"/>
-    <framework src="MessageUI.framework"/>
-    <framework src="WebKit.framework"/>
-
-  </platform>
-
-  <platform name="android">
-    <config-file parent="/*" target="config.xml">
-      <feature name="DynatraceCordovaPlugin">
-        <param name="android-package" value="com.dynatrace.cordova.plugin.DynatraceCordovaPlugin"/>
-      </feature>
-    </config-file>
-
-    <source-file src="src/android/DynatraceCordovaPlugin.java" target-dir="src/com/dynatrace/cordova/plugin"/>
-
-    <framework src="com.dynatrace.agent:agent-android:8.211.1.1010"/>
-  </platform>
+  <dependency id="@dynatrace/cordova-plugin" version="1.213.0" />
 </plugin>

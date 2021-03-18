@@ -2,6 +2,7 @@ module.exports = function (context) {
     var deferral;
     var fs;
     var path;
+    
     function isCordovaAbove (context, version) {
         var cordovaVersion = context.opts.cordova.version;
         console.log(cordovaVersion);
