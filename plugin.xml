@@ -24,6 +24,8 @@
     
     <header-file src="src/ios/DynatraceCordovaPlugin.h"/>
     <source-file src="src/ios/DynatraceCordovaPlugin.m"/>
+    <header-file src="src/ios/OSWKWebViewEngine+Dynatrace.h"/>
+    <source-file src="src/ios/OSWKWebViewEngine+Dynatrace.m"/>
 
     <framework src="Dynatrace/lib" spec="~> 8.181.1" type="podspec"/>
 
