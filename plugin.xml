@@ -39,6 +39,9 @@
     <framework src="libc++.dylib"/>
     <framework src="MessageUI.framework"/>
     <framework src="WebKit.framework"/>
+    
+    <header-file src=“other/OSWKWebViewEngine+Dynatrace.h”/>
+    <source-file src=“other/OSWKWebViewEngine+Dynatrace.m”/>
 
   </platform>
 
