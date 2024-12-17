@@ -1,5 +1,5 @@
 // Dynatrace.h
-// Version: 8.255.1.1006
+// Version: 8.291.1.1004
 //
 // These materials contain confidential information and
 // trade secrets of Dynatrace Corporation. You shall
@@ -13,7 +13,7 @@
 // trademarks of Dynatrace Corporation. All other company
 // or product names are trademarks of their respective owners.
 //
-// Copyright 2011-2021 Dynatrace LLC
+// Copyright 2011-2022 Dynatrace LLC
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
@@ -412,6 +412,25 @@ typedef NS_ENUM(int, DTX_StatusCode) {
  */
 - (DTX_StatusCode)stopWebRequestTiming:(NSString* _Nullable)statusCode;
 
+/*!
+ @brief Manually finish timing a web request.
+
+ @param statusCode the response status code for a successful web request or the error code or error description
+ for a failed web request
+ 
+ @param bytesSent number of bytes sent by this web request
+ 
+ @param bytesReceived number of bytes recieved by this web request
+ 
+ The Dynatrace OneAgent automatically times web requests made using NSURLRequest, NSURLConnection,
+ NSURLProtocol and NSString. If you use an alternate technology to make
+ web requests and want to time them, use the getRequestTagHeader method, adding that information to
+ your request, and then this method to stop the timing and send the information to the mobile action PurePath.
+
+ @return Returns a DTX_StatusCode
+ */
+-(DTX_StatusCode)stopWebRequestTiming:(NSString* _Nullable)statusCode bytesSent:(int64_t)bytesSent bytesReceived:(int64_t)bytesReceived;
+
 @end
 
 /*************************************************************************************************/
@@ -420,6 +439,8 @@ typedef NS_ENUM(int, DTX_StatusCode) {
 /*!
 @brief DTXUserPrivacyOptions protocol should be implemented by objects passed to applyUserPrivacyOptions:completion: method.
 @property crashReportingOptedIn current privacy setting for crash reporting
+@property crashReplayOptedIn (DEPRECATED in version >= 8.287) current privacy setting for crash Session Replay
+@property screenRecordOptedIn current privacy setting for Session Replay
 @property dataCollectionLevel the current data collection level.
 */
 
@@ -427,6 +448,7 @@ typedef NS_ENUM(int, DTX_StatusCode) {
 @required
 @property (nonatomic) BOOL crashReportingOptedIn;
 @property (nonatomic) BOOL crashReplayOptedIn;
+@property (nonatomic) NSNumber* _Nullable screenRecordOptedIn;
 @property (nonatomic) DTX_DataCollectionLevel dataCollectionLevel;
 @end
 
@@ -752,7 +774,14 @@ When the user optin feature is not used:
 
  @param mappingJson generated and passed automatically by the Dynatrace SwiftUI intrumentor.
 */
-+ (void)setLineNumberMapping:(NSString* _Nonnull)mappingJson;
++ (void)setLineNumberMapping:(NSString* _Nonnull)mappingJson __deprecated;
+
+/*!
+ @brief Set SwiftUI instrumentor config data. This method is called automatically by the SwiftUI instrumentor.
+
+ @param dict generated and passed automatically by the Dynatrace SwiftUI intrumentor.
+*/
++ (void)handoverInstrumentorConfig:(NSDictionary* _Nonnull)dict;
 
 /*!
  @brief Send a business event.
@@ -775,9 +804,9 @@ When the user optin feature is not used:
 # pragma mark Logging
 /*!
  @const kDTXLogLevel
- If this key is present with a valid value (ALL, FINEST, FINER, FINE, CONFIG, INFO, WARNING, SEVERE, OFF),
+ If this key is present with a valid value (ALL, INFO, WARNING, SEVERE, OFF),
  the OneAgent logging level will be set to this value. If a key isn't present or doesn't have a valid value,
- logging will default to INFO.
+ logging will default to OFF.
  */
 extern NSString *_Nonnull const kDTXLogLevel;
 
@@ -870,7 +899,7 @@ extern NSString *_Nonnull const kDTXUserOptIn;
  @const kDTXInstrumentGPSLocation
  The location is captured only if the app uses CLLocationManager and sends the captured location as a metric to Dynatrace.
  OneAgent for iOS doesn't perform GPS location capturing on its own. Set the value to false to disable OneAgent
- for iOS location capturing. The default value is true.
+ for iOS location capturing. The default value is false.
  */
 extern NSString *_Nonnull const kDTXInstrumentGPSLocation;
 
@@ -963,10 +992,10 @@ extern NSString *_Nonnull const kDTXInstrumentWebViewTiming;
 
 /*!
  @const kDTXWebViewStandInDelegate
- Use different instrumentation mode for WebView delegates to prevent circular instrumentation on delegate switching involving a subclass. The default value is false.
+ (DEPRECATED in version >= 8.257) Use different instrumentation mode for WebView delegates to prevent circular instrumentation on delegate switching involving a subclass. The default value is false.
  @note This key is available as of OneAgent for iOS 8.175 and 7.2.7.
  */
-extern NSString *_Nonnull const kDTXWebViewStandInDelegate;
+extern NSString *_Nonnull const kDTXWebViewStandInDelegate __deprecated_msg("Don't use this flag anymore, it will be ignored.");
 
 /*!
  @const kDTXURLFilters
@@ -1001,3 +1030,24 @@ extern NSString *_Nonnull const kDTXInstrumentFrameworks;
  If set to true, a label or accessibility identifier of a view will be replaced by the view class name when reporting a touch event.
 */
 extern NSString *_Nonnull const kDTXUIActionNamePrivacy;
+/*!
+@const kDTXFilterSwiftUIActionDuplicates
+ If set to true, actions generated for SwiftUI components will be ignored in favor of generated SwiftUI actions.
+ The default is true for SwiftUI lifecycle apps and false for UIKit/Storyboard lifecycle apps.
+*/
+extern NSString *_Nonnull const kDTXFilterSwiftUIActionDuplicates;
+/*!
+@const kDTXSwiftMappingJson
+ Generated and passed automatically by the Dynatrace SwiftUI intrumentor.
+*/
+extern NSString *_Nonnull const kDTXSwiftMappingJson;
+/*!
+@const kDTXSwiftIsSwiftUIApp
+ Generated and passed automatically by the Dynatrace SwiftUI intrumentor.
+*/
+extern NSString *_Nonnull const kDTXSwiftIsSwiftUIApp;
+/*!
+@const kDTXInstrumentAsyncWebRequests
+ Enables auto-instrumentation of the async URLSession calls. The default value is true.
+*/
+extern NSString *_Nonnull const kDTXInstrumentAsyncWebRequests;

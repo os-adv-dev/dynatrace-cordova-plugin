@@ -14,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -195,9 +195,9 @@ var Doctor = (function () {
                 if (this.isCapacitorAvailable()) {
                     return true;
                 }
-                var projectBuilderStr = (0, FileHelper_1.getProjectBuilderAsString)();
-                if (projectBuilderStr !== undefined) {
-                    return parseInt(projectBuilderStr.substring(projectBuilderStr.indexOf('distributions/gradle-') + 21, projectBuilderStr.indexOf('-all.zip')), 10) >= DoctorConstants_1.GRADLE_MIN_VERSION;
+                var gradleVersionFileStr = (0, FileHelper_1.getGradleVersionFileAsString)();
+                if (gradleVersionFileStr !== undefined) {
+                    return parseInt(gradleVersionFileStr.substring(gradleVersionFileStr.indexOf('distributions/gradle-') + 21, gradleVersionFileStr.indexOf('-all.zip')), 10) >= DoctorConstants_1.GRADLE_MIN_VERSION;
                 }
             }
         }

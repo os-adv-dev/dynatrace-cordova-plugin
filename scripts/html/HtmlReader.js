@@ -14,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HTMLReader = void 0;
+var fs_1 = require("fs");
 var jsdom_1 = require("jsdom");
 var FileHelper_1 = require("../helpers/FileHelper");
 var HtmlFile_1 = require("./HtmlFile");
@@ -46,25 +46,17 @@ var HTMLReader = (function () {
     }
     HTMLReader.prototype.isAvailable = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var error_1;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (this.htmlFile === undefined || !String(this.htmlFile).endsWith('.html')) {
-                            return [2, false];
-                        }
-                        _a.label = 1;
-                    case 1:
-                        _a.trys.push([1, 3, , 4]);
-                        return [4, (0, FileHelper_1.checkIfFileExists)(this.htmlFile)];
-                    case 2:
-                        _a.sent();
-                        return [2, true];
-                    case 3:
-                        error_1 = _a.sent();
-                        return [2, false];
-                    case 4: return [2];
+                if (this.htmlFile === undefined || !String(this.htmlFile).endsWith('.html')) {
+                    return [2, false];
                 }
+                try {
+                    return [2, (0, fs_1.existsSync)(this.htmlFile)];
+                }
+                catch (error) {
+                    return [2, false];
+                }
+                return [2];
             });
         });
     };
@@ -87,4 +79,4 @@ var HTMLReader = (function () {
     };
     return HTMLReader;
 }());
-exports.HTMLReader = HTMLReader;
+exports.default = HTMLReader;

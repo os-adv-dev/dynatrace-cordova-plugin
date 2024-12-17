@@ -25,7 +25,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -49,6 +49,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.searchForPListFile = exports.modifyPListFile = void 0;
 var path_1 = require("path");
+var fs_1 = require("fs");
 var plist_1 = require("plist");
 var FileHelper_1 = require("./helpers/FileHelper");
 var Logger_1 = require("./logger/Logger");
@@ -66,10 +67,7 @@ var modifyPListFile = function (pathToPList, iosConfig, removeOnly) { return __a
                 if (!pathToPList.endsWith('.plist')) {
                     throw new Error("Can't find .plist file. plist path must also include the plist file!");
                 }
-                try {
-                    (0, FileHelper_1.checkIfFileExistsSync)(pathToPList);
-                }
-                catch (e) {
+                if (!(0, fs_1.existsSync)(pathToPList)) {
                     throw new Error('Could not read plist file: ' + pathToPList);
                 }
                 _a.label = 3;

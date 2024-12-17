@@ -6,189 +6,207 @@
 	<dict>
 		<key>Headers/Dynatrace-Swift.h</key>
 		<data>
-		ij7uy3jHYA1Wm3l0kqWYfE5yxS8=
+		ijL/EWT2ZFIyN51CYuYBOw5b1GQ=
 		</data>
 		<key>Headers/Dynatrace.h</key>
 		<data>
-		hwrLUKELrQH22SW8s+rriAoELqs=
+		3OWNDcUbMkClsfHkwB5yBx0TEhg=
+		</data>
+		<key>Headers/DynatraceSwiftUI.h</key>
+		<data>
+		l1czVg6rKXDNERXqt5YIVvfsmo0=
 		</data>
 		<key>Headers/Framework.h</key>
 		<data>
-		017HCFeEpxIdSxaugOVfz6JGwM4=
+		uHF77OTJtL3ixU04ib2qpUKAtwQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		PSLBNZiKoVC7kDQr1kmVEm1qCb8=
+		fmvZnMU9B0A2ULR+Lllapbr51z8=
 		</data>
 		<key>Modules/Dynatrace.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		RkSZg+rBRDd1jzGwTKUessJQ9VA=
+		GPPmPfKOkH6FHM17tk/z/L9o9zY=
 		</data>
 		<key>Modules/Dynatrace.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		VDxktv85Q7u2MOXckIKkuvoE0pY=
+		CLs+OuBduzqI0BcDeXvNJZjiHeg=
+		</data>
+		<key>Modules/Dynatrace.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<data>
+		XV/uL5DyJypkqSLAvM+OrlcVyaU=
+		</data>
+		<key>Modules/Dynatrace.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		AOB1cCp5G7XLw+OZTEtFWr0FpA8=
 		</data>
 		<key>Modules/Dynatrace.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		R0V+BgXdMpWQnGLPOaVK04r2Pnk=
+		Ypi1SjwCG515zLBnaIqXurCapAg=
 		</data>
 		<key>Modules/Dynatrace.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ZcsfRNsErGGvoPVBGo8iw9MJ90Y=
+		AOB1cCp5G7XLw+OZTEtFWr0FpA8=
 		</data>
 		<key>Modules/Dynatrace.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		SiLT3g+/n1ekzg22S46jIyRYXoM=
+		+wMefKi8BPfZ6ddyPGGhqFT8vTI=
+		</data>
+		<key>Modules/Dynatrace.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<data>
+		XV/uL5DyJypkqSLAvM+OrlcVyaU=
+		</data>
+		<key>Modules/Dynatrace.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		rRYimQ4OFy+30+vvuE/A9qsayNo=
 		</data>
 		<key>Modules/Dynatrace.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		PsxZwFafjpGG99htAA4G4buqX1E=
+		SyAKVf/qsvZR/q+OhGLWyeSikBo=
 		</data>
 		<key>Modules/Dynatrace.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		NAzIHTzTgCxG+biMMM1O87JFZpQ=
+		rRYimQ4OFy+30+vvuE/A9qsayNo=
 		</data>
 		<key>Modules/Dynatrace.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4sIDBAZSFMaMsGzX4o3jNzeUiTY=
+		hD6bDYcBUocxFJzU8ASy6Opx3C8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		moe8HagbHglvxj2c4rvM3hhg4WI=
+		hgjoPHAbOBNGBZxNLl7UF+UL/0I=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		Ed9+uiufIHjN5Og2YyN/1BKoLGY=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/Dynatrace-Swift.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ij7uy3jHYA1Wm3l0kqWYfE5yxS8=
-			</data>
 			<key>hash2</key>
 			<data>
-			a77kaLGVvWBgXsjDn5SUnQoGnC5p3v1kibEF2B7tNJM=
+			5+mmCbCDHjdTkKQRb08Zd/PqAKuVSqocCa0pY8bhOAc=
 			</data>
 		</dict>
 		<key>Headers/Dynatrace.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			hwrLUKELrQH22SW8s+rriAoELqs=
-			</data>
 			<key>hash2</key>
 			<data>
-			3E9hEUSWdNoEe96CUr3HeW6vVzBulRVeKkDHnY0zOlk=
+			IxE/3LNvx5kmq+mo6sv+grE+Pqc54Di/cifz92jI2Xc=
+			</data>
+		</dict>
+		<key>Headers/DynatraceSwiftUI.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2n6UqrsYZzSz89+6lVNLXGWrRH0bnLf41I7n4w1Kmkw=
 			</data>
 		</dict>
 		<key>Headers/Framework.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			017HCFeEpxIdSxaugOVfz6JGwM4=
-			</data>
 			<key>hash2</key>
 			<data>
-			RnTYWfurbb/o7OPJbwgdfGEqaJcRZrjgMGnhmuuSggY=
+			t1nMu3qjLOiI4FMGN+0ev+395TKrYaI7dMdVPZA9dSs=
 			</data>
 		</dict>
 		<key>Modules/Dynatrace.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			RkSZg+rBRDd1jzGwTKUessJQ9VA=
-			</data>
 			<key>hash2</key>
 			<data>
-			HhZ5gDQhqzhHgl2nf2p3v6FTalD9+VMbt4uZpRo6A0Y=
+			GMUqqJoquJMwmQjJz/5LmmFxwECPDSb6Lm7T9ttIaPw=
 			</data>
 		</dict>
 		<key>Modules/Dynatrace.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			VDxktv85Q7u2MOXckIKkuvoE0pY=
-			</data>
 			<key>hash2</key>
 			<data>
-			VODCF1YAQEAcwL9P6RMnm6WWHR/oJsuhXX0VWMC0n+Q=
+			qAsn23X7Nz4X/HnYn60QpU6h5wH1K4HIl8pDkntk3Cc=
+			</data>
+		</dict>
+		<key>Modules/Dynatrace.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			k2NINdt/l8jKTYC6Q9saAtoES4VdNqAhtJtBB+0Yz/c=
+			</data>
+		</dict>
+		<key>Modules/Dynatrace.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			D7unnIAaPUqTbgVlFDI1X+/OWKv724f91AZaCfVMTEI=
 			</data>
 		</dict>
 		<key>Modules/Dynatrace.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			R0V+BgXdMpWQnGLPOaVK04r2Pnk=
-			</data>
 			<key>hash2</key>
 			<data>
-			UsGubuWvrLeH7C5vFEXNLuIFOqoInvW7jZgIRywn6eg=
+			sH+tCMwTIYTyXjfSlJYjjyQggvZxxJDTwdUTGWFk9K0=
 			</data>
 		</dict>
 		<key>Modules/Dynatrace.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ZcsfRNsErGGvoPVBGo8iw9MJ90Y=
-			</data>
 			<key>hash2</key>
 			<data>
-			zV0EHq7RlupHaDTmWcXeZKgHj/hZMqzM3T9/mtK9Iag=
+			D7unnIAaPUqTbgVlFDI1X+/OWKv724f91AZaCfVMTEI=
 			</data>
 		</dict>
 		<key>Modules/Dynatrace.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			SiLT3g+/n1ekzg22S46jIyRYXoM=
-			</data>
 			<key>hash2</key>
 			<data>
-			PmG3NqHuJ4RLXBGJdj6Jx01/SLBwZ0X3NUb8OuDmQc0=
+			Ma4kvK0AFBIXz+mzS3vDedhgxrxmzZqAdLJGQU4qA8o=
+			</data>
+		</dict>
+		<key>Modules/Dynatrace.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			k2NINdt/l8jKTYC6Q9saAtoES4VdNqAhtJtBB+0Yz/c=
+			</data>
+		</dict>
+		<key>Modules/Dynatrace.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VX54TKADm++pl3s/VHLi3AI3vCw5Nfrk/LwCVmt5lHA=
 			</data>
 		</dict>
 		<key>Modules/Dynatrace.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			PsxZwFafjpGG99htAA4G4buqX1E=
-			</data>
 			<key>hash2</key>
 			<data>
-			15QwNHLfZVaRyn6I++V6UOudpe+d9SlVE4symwKARlg=
+			KS/Cwhu3djQQFWQ5FmR2jahXfBV8+9xDevTGhIzHlMA=
 			</data>
 		</dict>
 		<key>Modules/Dynatrace.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			NAzIHTzTgCxG+biMMM1O87JFZpQ=
-			</data>
 			<key>hash2</key>
 			<data>
-			dMGBQGHNVA5hhWU//mkrqLhxScnBDpGrvjVbNKLDtbQ=
+			VX54TKADm++pl3s/VHLi3AI3vCw5Nfrk/LwCVmt5lHA=
 			</data>
 		</dict>
 		<key>Modules/Dynatrace.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			4sIDBAZSFMaMsGzX4o3jNzeUiTY=
-			</data>
 			<key>hash2</key>
 			<data>
-			QjZel0kdUqvodmQ/B2GkaFw+R6LOHQyO08LZopHUKpc=
+			mAuDgKTHg5tNTJ9KNfvRalTM9upIR4QNL15zYJywtKc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			moe8HagbHglvxj2c4rvM3hhg4WI=
-			</data>
 			<key>hash2</key>
 			<data>
-			8hSvl3DY6OoKht/xRfmh7tuWRVdUmH3zgnKlLznwsKA=
+			haVecmOINwDjaasBz+WWiDKEeWTzDLM5ohGgauWT0Pg=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9qjCJkcI/Weu/JaiEb9UoI6VxwzmUQzkvn/HK2lKXiQ=
 			</data>
 		</dict>
 	</dict>
