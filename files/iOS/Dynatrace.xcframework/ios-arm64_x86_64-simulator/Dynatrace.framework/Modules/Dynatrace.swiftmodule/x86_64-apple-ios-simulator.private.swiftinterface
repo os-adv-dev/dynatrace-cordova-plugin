@@ -29,7 +29,7 @@ public enum SwiftUIInstrumentationConfigParam {
   }
 }
 @available(iOS 13.0, *)
-public struct instrument<Content> : SwiftUI.View where Content : SwiftUI.View {
+public struct instrument<Content> : Swift.Sendable, SwiftUI.View where Content : SwiftUI.View {
   public init(with values: [Swift.String : Swift.String], viewName: Swift.String, createAction: Swift.Bool = true, @SwiftUI.ViewBuilder _ content: @escaping () -> Content)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get

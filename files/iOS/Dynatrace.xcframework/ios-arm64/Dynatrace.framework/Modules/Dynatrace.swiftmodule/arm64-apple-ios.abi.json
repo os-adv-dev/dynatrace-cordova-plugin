@@ -407,6 +407,13 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "View",
             "printedName": "View",
             "children": [
@@ -572,9 +579,9 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/opt\/jenkins\/workspace\/eAgent_ios-agent_release_8.291.x\/adk\/DynatraceUEM\/Dynatrace\/SwiftUIExtensions.swift",
+      "filePath": "\/opt\/agent-jenkins\/workspace\/eAgent_ios-agent_release_8.305.x\/adk\/DynatraceUEM\/Dynatrace\/SwiftUIExtensions.swift",
       "kind": "BooleanLiteral",
-      "offset": 1277,
+      "offset": 1287,
       "length": 4,
       "value": "true"
     }
