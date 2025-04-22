@@ -1,9 +1,9 @@
 /**
- * Cordova hook script to copy the contents of `www/dynatraceConfig`
- * into the platform-specific project root during build.
- * - Android: copies to `platforms/android/app/`
- * - iOS: copies to `platforms/ios/`
- * Assumes only one platform is being built at a time.
+ * Cordova hook script to copy the contents of 
+ * `<project_root>/platforms/android` or `<project_root>/platforms/ios/<app_name>/Resources` 
+ * into the project root. This ensures that the plugin logic for copying configurations 
+ * continues to work, allowing you to take advantage of OutSystems' extensibility features 
+ * to copy files and support different files for different environments.
  */
 
 module.exports = function (context) {
@@ -66,7 +66,7 @@ module.exports = function (context) {
         return deferral.promise;
     }
 
-    console.log("Copying dynatraceConfig to: " + platformRoot);
+    console.log("Copying dynatraceConfig to: " + projectRoot);
     copyFolderRecursiveSync(configPath, projectRoot);
 
     deferral.resolve();
