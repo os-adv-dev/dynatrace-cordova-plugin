@@ -46,16 +46,16 @@ module.exports = function (context) {
     }
 
     platforms.forEach((platform) => {
-        let platformRoot;
+        let platformResourcesRoot;
         if (platform === "android") {
-            platformRoot = path.join(projectRoot, "platforms", "android", "app");
+            platformResourcesRoot = path.join(projectRoot, "platforms", "android");
         } else if (platform === "ios") {
-            platformRoot = path.join(projectRoot, "platforms", "ios");
+            platformResourcesRoot = path.join(projectRoot, "platforms", "ios", "Resources");
         } else {
             return; // unsupported platform
         }
 
-        console.log("Copying config to: " + platformRoot);
+        console.log("Copying config to: " + platformResourcesRoot);
         copyFolderRecursiveSync(wwwPath, platformRoot);
     });
 
