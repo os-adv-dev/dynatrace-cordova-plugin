@@ -56,7 +56,7 @@ module.exports = function (context) {
         }
 
         console.log("Copying config to: " + platformResourcesRoot);
-        copyFolderRecursiveSync(wwwPath, platformRoot);
+        copyFolderRecursiveSync(wwwPath, platformResourcesRoot);
     });
 
     deferral.resolve();
