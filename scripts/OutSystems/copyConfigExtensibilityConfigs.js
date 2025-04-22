@@ -67,7 +67,7 @@ module.exports = function (context) {
     }
 
     console.log("Copying dynatraceConfig to: " + platformRoot);
-    copyFolderRecursiveSync(configPath, platformRoot);
+    copyFolderRecursiveSync(configPath, projectRoot);
 
     deferral.resolve();
 
