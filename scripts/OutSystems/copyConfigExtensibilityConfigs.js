@@ -28,17 +28,25 @@ module.exports = function (context) {
     }
 
     var projectRoot = context.opts.projectRoot;
-
-    const platform = context.opts.platforms[0]; // Assume only one platform
     let platformRoot;
     let configPath;
-    
+
+    const platform = context.opts.platforms[0]; // Assume only one platform
+
     if (platform === "android") {
         platformRoot = path.join(projectRoot, "platforms", "android");
         configPath = path.join(platformRoot, "dynatraceConfig");
     } else if (platform === "ios") {
         platformRoot = path.join(projectRoot, "platforms", "ios");
-        configPath = path.join(platformRoot, "Resources", "dynatraceConfig");
+        const files = fs.readdirSync(platformRoot);
+        const xcodeproj = files.find((f) => f.endsWith(".xcodeproj"));
+        if (!xcodeproj) {
+            console.log("Could not find .xcodeproj in iOS platform folder.");
+            deferral.resolve();
+            return deferral.promise;
+        }
+        const iosProjectName = path.basename(xcodeproj, ".xcodeproj");
+        configPath = path.join(platformRoot, iosProjectName, "Resources", "dynatraceConfig");
     } else {
         console.log("Unsupported platform: " + platform);
         deferral.resolve();
