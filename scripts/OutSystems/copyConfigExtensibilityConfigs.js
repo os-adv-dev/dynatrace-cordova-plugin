@@ -28,17 +28,17 @@ module.exports = function (context) {
 
     var projectRoot = context.opts.projectRoot;
     var wwwPath = path.join(projectRoot, "www");
-    var configPath = path.join(wwwPath, "dynatraceConfig");
+    //var configPath = path.join(wwwPath, "dynatraceConfig");
 
     const platforms = context.opts.platforms || [];
 
-    if (!fs.existsSync(configPath)) {
-        console.log("Config path not found: " + configPath);
+    if (!fs.existsSync(wwwPath)) {
+        console.log("Config path not found: " + wwwPath);
         deferral.resolve();
         return deferral.promise;
     }
 
-    const files = fs.readdirSync(configPath);
+    const files = fs.readdirSync(wwwPath);
     if (files.length === 0) {
         console.log("dynatraceConfig folder is empty.");
         deferral.resolve();
@@ -56,7 +56,7 @@ module.exports = function (context) {
         }
 
         console.log("Copying config to: " + platformRoot);
-        copyFolderRecursiveSync(configPath, platformRoot);
+        copyFolderRecursiveSync(wwwPath, platformRoot);
     });
 
     deferral.resolve();
