@@ -80,7 +80,6 @@ exports.NativeNetworkInterceptorUtils = {
             console.log('Missing Dynatrace Javascript Agent API!');
             return headers;
         }
-        headers['x-dynatrace'] = '';
         headers['x-dtc'] = getDTC(actionId);
         return headers;
     },

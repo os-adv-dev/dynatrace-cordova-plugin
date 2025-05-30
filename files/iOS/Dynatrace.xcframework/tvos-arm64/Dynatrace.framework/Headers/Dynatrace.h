@@ -1,5 +1,5 @@
 // Dynatrace.h
-// Version: 8.305.3.1016
+// Version: 8.313.1.1016
 //
 // These materials contain confidential information and
 // trade secrets of Dynatrace Corporation. You shall
@@ -653,12 +653,11 @@ typedef NS_ENUM(int, DTX_SwiftUIViewType) {
 /*!
  @brief Enable Dynatrace crash reporting.
 
- The Dynatrace OneAgent can report on application crashes using the KSCrash framework. Call this
+ The Dynatrace OneAgent can report on application crashes using the PLCrashReporter framework. Call this
  method after startup to enable crash reporting to Dynatrace.
 
  When using auto-start use the Info.plist value DTXCrashReportingEnabled to control whether this
- method is invoked automatically. You must disable the automatic invocation of this method if
- you wish to use one of the following methods to enable third party crash reporting.
+ method is invoked automatically.
 
  @param sendCrashReport YES to send complete crash report to Dynatrace. NO to
  send only minimal information.
@@ -825,12 +824,38 @@ When the user optin feature is not used:
 /*!
  * @brief Sends an event with the fields specified. A context can be added to provide information for later modification.
  *
+ * The keys of the fields have to be prefixed with `event_properties.` in order to be handled by the agent. All other fields will be dropped.
+ *
  * Note: This feature is currently only supported for Real User Monitoring powered by Grail on Dynatrace SaaS deployments.
  *
  * @param fields fields of the event being sent
  * @param eventContext context of the event being sent provided for potential later modification
  */
 + (void)sendEventWithFields:(NSDictionary<NSString*,id>* _Nullable)fields eventContext:(id _Nullable)eventContext NS_SWIFT_NAME(sendEvent(fields:eventContext:));
+
+/*!
+ * @brief Sends an exception event with the fields specified.
+ *
+ * The keys of the fields have to be prefixed with `event_properties.` in order to be handled by the agent. All other fields will be dropped.
+ *
+ * Note: This feature is currently only supported for Real User Monitoring powered by Grail on Dynatrace SaaS deployments.
+ *
+ * @param exception the exception that has been thrown
+ * @param fields custom fields of the event being sent
+ */
++ (void)sendExceptionEventWithException:(NSException* _Nonnull)exception fields:(NSDictionary<NSString*,id>* _Nullable)fields;
+
+/*!
+ * @brief Sends an exception event with the fields specified in the fieldsProvider.
+ *
+ * The keys provided in the fieldsProvider have to be prefixed with `event_properties.` in order to be handled by the agent. All other fields will be dropped.
+ *
+ * Note: This feature is currently only supported for Real User Monitoring powered by Grail on Dynatrace SaaS deployments.
+ *
+ * @param exception the exception that has been thrown
+ * @param fieldsProvider contains custom fields to be attached to the event
+ */
++ (void)sendExceptionEventWithException:(NSException* _Nonnull)exception provider:(void (^ _Nonnull)(NSMutableDictionary * _Nonnull fields))fieldsProvider;
 
 /*!
  * @brief A view refers to a view/screen/window which a user is presented with at any one time. On every opening of a view
@@ -871,6 +896,16 @@ When the user optin feature is not used:
  * @param subscriber the previously added subscriber
  */
 + (void)removeEventModifier:(DTXModifyEventSubscriber* _Nonnull)subscriber;
+
+/*!
+ * @brief Sends a session properties event. Any custom properties must be added in the `session_properties.*` namespace,
+ * otherwise they will be dropped. Only one session properties event may be active for every session.
+ *
+ * Note: This feature is currently only supported for Real User Monitoring powered by Grail on Dynatrace SaaS deployments.
+ *
+ * @param properties properties that apply to all events in the current session
+ */
++ (void)sendSessionPropertyEvent:(NSDictionary<NSString*,id>* _Nullable)properties;
 
 @end
 #endif

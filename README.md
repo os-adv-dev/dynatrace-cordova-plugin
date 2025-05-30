@@ -24,15 +24,15 @@ For information as to why this is necessary, read more [here](#migration-from-ma
   * Java 11
 * For iOS users: Minimum iOS 12
 * For JavaScript Agent: access to API of cluster
-* Node: >= 16.x
+* Node: >= 18.x
 * Cordova: 10+
 
 ## Agent Versions
 
 This agent versions are configured in this plugin:
 
-* Android Agent: 8.305.1.1005
-* iOS Agent: 8.305.3.1016
+* Android Agent: 8.313.1.1004
+* iOS Agent: 8.313.1.1016
 
 ## Quick Setup
 
@@ -903,6 +903,20 @@ When using Apple Pay with WKWebView, there are specific checks that WebKit (Appl
 **Workaround:** You can set the `DTXHybridApplication` flag to false which will remove the injection of our script. This will also remove the correlation of the Mobile and Web Sessions.
 
 ## Changelog
+
+2.313.1
+* Native web requests utils no longer set and need x-dynatrace header 
+* Updated Android (8.313.1.1004) & iOS Agent (8.313.1.1016)
+
+2.311.1
+* Updated Android (8.311.1.1007) & iOS Agent (8.311.1.1013)
+
+2.309.1
+* Updated Android (8.309.2.1011) & iOS Agent (8.309.1.1009)
+
+2.307.1
+* Updated Android (8.307.1.1005) & iOS Agent (8.307.1.1014)
+* Deprecation of Node 16
 
 2.305.1
 * Updated Android (8.305.1.1005) & iOS Agent (8.305.3.1016)
