@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="@dynatrace/cordova-plugin"
-    version="2.305.1">
+    version="2.313.1">
     <name>Dynatrace</name>
     <description>Dynatrace Cordova Plugin</description>
 
@@ -49,7 +49,7 @@
         <source-file src="other/DynatraceCordovaPlugin.m"/>
     </platform>
 	<platform name="android">
-        <framework src="com.dynatrace.agent:agent-android:8.305.1.1005" />
+        <framework src="com.dynatrace.agent:agent-android:8.313.1.1004" />
 		<source-file src="other/DynatraceCordovaPlugin.java" target-dir="src/com/dynatrace/cordova/plugin" />
 	
 		<config-file target="config.xml" parent="/*">
